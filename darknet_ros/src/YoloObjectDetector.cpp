@@ -39,7 +39,7 @@ YoloObjectDetector::YoloObjectDetector(ros::NodeHandle nh):
      rosBoxes_(0),
      rosBoxCounter_(0),
      rosBoxColors_(0),
-     opencvWindow_("YOLO V2 object detection")
+     opencvWindow_("PEPPER YOLO!")
 {
   ROS_INFO("[YoloObjectDetector] Node started.");
 
@@ -186,7 +186,7 @@ void YoloObjectDetector::init() {
   if(viewImage_ && !darknetImageViewer_) {
     cv::namedWindow(opencvWindow_, cv::WINDOW_NORMAL);
     cv::moveWindow(opencvWindow_, 0, 0);
-    cv::resizeWindow(opencvWindow_, 1352, 1013);
+    cv::resizeWindow(opencvWindow_, 640, 480);
   }
 }
 
