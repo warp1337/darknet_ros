@@ -252,12 +252,12 @@ extern "C" darknet_ros::RosBox_ *demo_yolo() {
 
     if(view_image)
     {
-      cvNamedWindow("YOLO_V2", CV_WINDOW_NORMAL);
+      cvNamedWindow("PEPPER YOLO_V2", CV_WINDOW_NORMAL);
       if(full_screen){
-        cvSetWindowProperty("YOLO_V2", CV_WND_PROP_FULLSCREEN, CV_WINDOW_FULLSCREEN);
+        cvSetWindowProperty("PEPPER YOLO_V2", CV_WND_PROP_FULLSCREEN, CV_WINDOW_FULLSCREEN);
       } else {
-        cvMoveWindow("YOLO_V2", 0, 0);
-        cvResizeWindow("YOLO_V2", 1352, 1013);
+        cvMoveWindow("PEPPER YOLO_V2", 0, 0);
+        cvResizeWindow("PEPPER  YOLO_V2", 640, 480);
       }
     }
   } else {
@@ -270,7 +270,7 @@ extern "C" darknet_ros::RosBox_ *demo_yolo() {
     if(pthread_create(&detect_thread, 0, detect_in_thread, 0)) error("Thread creation failed");\
     if(view_image)
     {
-      show_image(disp, "YOLO_V2");
+      show_image(disp, "PEPPER YOLO_V2");
       cvWaitKey(wait_key_delay);
     }
     pthread_join(fetch_thread, 0);
