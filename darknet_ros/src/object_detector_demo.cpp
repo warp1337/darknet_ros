@@ -257,7 +257,7 @@ extern "C" darknet_ros::RosBox_ *demo_yolo() {
         cvSetWindowProperty("PEPPER YOLO_V2", CV_WND_PROP_FULLSCREEN, CV_WINDOW_FULLSCREEN);
       } else {
         cvMoveWindow("PEPPER YOLO_V2", 0, 0);
-        cvResizeWindow("PEPPER  YOLO_V2", 640, 480);
+        cvResizeWindow("PEPPER  YOLO_V2", 320, 240);
       }
     }
   } else {
