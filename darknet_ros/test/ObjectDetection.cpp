@@ -128,17 +128,17 @@ TEST(ObjectDetection, DetectDog)
     double yPosCenter = boundingBoxesResults_.boundingBoxes.at(i).ymin +
         (boundingBoxesResults_.boundingBoxes.at(i).ymax - boundingBoxesResults_.boundingBoxes.at(i).ymin)*0.5;
 
-    if(boundingBoxesResults_.boundingBoxes.at(i).Class == "dog") {
+    if(boundingBoxesResults_.boundingBoxes.at(i).class == "dog") {
       detectedDog = true;
       //std::cout << "centerErrorDog  " << xPosCenter << ", " <<  yPosCenter << std::endl;
       centerErrorDog = std::sqrt(std::pow(xPosCenter - 222.5, 2) + std::pow(yPosCenter - 361.5, 2));
     }
-    if(boundingBoxesResults_.boundingBoxes.at(i).Class == "bicycle") {
+    if(boundingBoxesResults_.boundingBoxes.at(i).class == "bicycle") {
       detectedBicycle = true;
       //std::cout << "centerErrorBicycle "  << xPosCenter << ", " <<  yPosCenter << std::endl;
       centerErrorBicycle = std::sqrt(std::pow(xPosCenter - 338.0, 2) + std::pow(yPosCenter - 289.0, 2));
     }
-    if(boundingBoxesResults_.boundingBoxes.at(i).Class == "car") {
+    if(boundingBoxesResults_.boundingBoxes.at(i).class == "car") {
       detectedCar = true;
       //std::cout << "centerErrorCar  " << xPosCenter << ", " <<  yPosCenter << std::endl;
       centerErrorCar = std::sqrt(std::pow(xPosCenter - 561.0, 2) + std::pow(yPosCenter - 126.5, 2));
@@ -169,7 +169,7 @@ TEST(ObjectDetection, DetectPerson) {
     double yPosCenter = boundingBoxesResults_.boundingBoxes.at(i).ymin +
         (boundingBoxesResults_.boundingBoxes.at(i).ymax - boundingBoxesResults_.boundingBoxes.at(i).ymin)*0.5;
 
-    if(boundingBoxesResults_.boundingBoxes.at(i).Class == "person") {
+    if(boundingBoxesResults_.boundingBoxes.at(i).class == "person") {
       detectedPerson = true;
       //std::cout << "centerErrorPerson  " << xPosCenter << ", " <<  yPosCenter << std::endl;
       centerErrorPerson = std::sqrt(std::pow(xPosCenter - 228.0, 2) + std::pow(yPosCenter - 238.0, 2));

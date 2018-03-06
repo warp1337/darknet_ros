@@ -206,7 +206,7 @@ void YoloObjectDetector::drawBoxes(cv::Mat &inputFrame, std::vector<RosBox_> &ro
     int xmax = (rosBoxes[i].x + rosBoxes[i].w/2)*frameWidth_;
     int ymax = (rosBoxes[i].y + rosBoxes[i].h/2)*frameHeight_;
 
-    boundingBox.Class = objectLabel;
+    boundingBox.class = objectLabel;
     boundingBox.probability = rosBoxes[i].prob;
     boundingBox.xmin = xmin;
     boundingBox.ymin = ymin;
@@ -246,11 +246,11 @@ void YoloObjectDetector::runYolo(cv::Mat &fullFrame, const std_msgs::Header& hea
     // split bounding boxes by class
     for (int i = 0; i < num; i++) {
       for (int j = 0; j < numClasses_; j++) {
-         if (boxes_[i].Class == j) {
+         if (boxes_[i].class == j) {
             rosBoxes_[j].push_back(boxes_[i]);
             rosBoxCounter_[j]++;
             if(!darknetImageViewer_ && enableConsoleOutput_) {
-              std::cout << classLabels_[boxes_[i].Class] << " (" << boxes_[i].prob*100 << "%)" << std::endl;
+              std::cout << classLabels_[boxes_[i].class] << " (" << boxes_[i].prob*100 << "%)" << std::endl;
             }
          }
       }
