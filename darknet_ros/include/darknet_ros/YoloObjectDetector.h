@@ -40,7 +40,7 @@ namespace darknet_ros {
 //! Bounding box of the detected object.
 typedef struct {
   float x, y, w, h, prob;
-  int num, Class;
+  int num, label;
 } RosBox_;
 
 /*!
