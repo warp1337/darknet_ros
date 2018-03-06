@@ -153,7 +153,7 @@ void *detect_in_thread(void *ptr) {
           ROI_boxes[count].y = y_center;
           ROI_boxes[count].w = BoundingBox_width;
           ROI_boxes[count].h = BoundingBox_height;
-          ROI_boxes[count].class = j;
+          ROI_boxes[count].label = j;
           ROI_boxes[count].prob = probs[i][j];
           count++;
         }

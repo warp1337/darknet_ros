@@ -1,4 +1,4 @@
-string class
+string label
 float64 probability
 int64 xmin
 int64 ymin
